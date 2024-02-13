@@ -1,5 +1,5 @@
 
-#include "serval_extension.hpp"
+#include <serval/extension.hpp>
 
 #include <cr.h>
 #include <spdlog/spdlog.h>
