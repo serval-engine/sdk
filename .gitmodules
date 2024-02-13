@@ -1,0 +1,21 @@
+[submodule "thirdparty/cr"]
+	path = thirdparty/cr
+	url = git@github.com:fungos/cr.git
+[submodule "thirdparty/entt"]
+	path = thirdparty/entt
+	url = git@github.com:skypjack/entt.git
+[submodule "thirdparty/magic_enum"]
+	path = thirdparty/magic_enum
+	url = git@github.com:Neargye/magic_enum.git
+[submodule "thirdparty/spdlog"]
+	path = thirdparty/spdlog
+	url = git@github.com:gabime/spdlog.git
+[submodule "thirdparty/imgui"]
+	path = thirdparty/imgui
+	url = git@github.com:ocornut/imgui.git
+[submodule "thirdparty/hedley"]
+	path = thirdparty/hedley
+	url = git@github.com:nemequ/hedley.git
+[submodule "thirdparty/glm"]
+	path = thirdparty/glm
+	url = git@github.com:g-truc/glm.git

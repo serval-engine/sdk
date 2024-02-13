@@ -1,0 +1,63 @@
+#ifndef SERVAL_SDK__TIMELINE_HPP
+#define SERVAL_SDK__TIMELINE_HPP
+
+#include "types.hpp"
+
+namespace serval {
+    class Timeline;
+}
+
+/**
+ * @brief Public interface for Timelines
+ * 
+ */
+class serval::Timeline {
+public:
+    virtual ~Timeline() {}
+
+    /**
+     * @brief If the timeline is paused
+     * 
+     * @return true The timeline is paused
+     * @return false The timeline is running
+     */
+    virtual bool paused () const = 0;
+
+    /**
+     * @brief Elapsed seconds since the timeline was started
+     * 
+     * @return Scalar 
+     */
+    virtual Scalar elapsed () const = 0;
+
+    /**
+     * @brief Calculate the time scaled by local_scale()
+     * 
+     * @param time Time to scale
+     * @return Scalar Scaled time_delta
+     */
+    virtual Scalar scale (Scalar time) const = 0;
+
+    /**
+     * @brief Elapsed seconds since last update (scaled by local_scale())
+     * 
+     * @return Scalar 
+     */
+    virtual Scalar delta () const = 0;
+
+    /**
+     * @brief The current timeline's scale factor
+     * 
+     * @return Scalar 
+     */
+    virtual Scalar local_scale () const = 0;
+
+    /**
+     * @brief The timeline's scale factor after applying all parent scaling
+     * 
+     * @return Scalar 
+     */
+    virtual Scalar absolute_scale () const = 0;
+};
+
+#endif
