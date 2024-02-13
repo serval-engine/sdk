@@ -27,12 +27,12 @@ namespace serval {
 
     class Id {
     public:
-        using type = entt::hashed_string::hash_type;
-        static constexpr type INVALID = 0; 
+        using Type = entt::hashed_string::hash_type;
+        static constexpr Type INVALID = 0; 
         Id() = default;
-        constexpr Id(type value) : m_value{value} {}
+        constexpr Id(Type value) : m_value{value} {}
         constexpr Id(const entt::hashed_string& value) : m_value{value.value()} {}
-        Id& operator= (type value) {
+        Id& operator= (Type value) {
             m_value = value;
             return *this;
         }
@@ -40,9 +40,9 @@ namespace serval {
             m_value = value.value();
             return *this;
         }
-        operator type () const { return m_value; }
-        type operator() () const { return m_value; }
-        type operator* () const { return m_value; }
+        operator Type () const { return m_value; }
+        Type operator() () const { return m_value; }
+        Type operator* () const { return m_value; }
 
         bool valid () const { return m_value != INVALID; }
         
@@ -50,7 +50,7 @@ namespace serval {
             return {entt::hashed_string{str.c_str()}};
         }
     private:
-        type m_value;
+        Type m_value;
     };
     static_assert(std::is_trivial_v<Id>, "serval::Id must be trivial");
     static_assert(std::is_standard_layout_v<Id>, "serval::Id must be standard layout");

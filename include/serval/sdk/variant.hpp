@@ -33,7 +33,7 @@ namespace serval::variant {
         template <> struct TypeOf<Type::Boolean> { using Type = bool; };
         template <> struct TypeOf<Type::Integer> { using Type = std::int32_t; };
         template <> struct TypeOf<Type::Integer64> { using Type = std::int64_t; };
-        template <> struct TypeOf<Type::serval::Scalar> { using Type = serval::Scalar; };
+        template <> struct TypeOf<Type::Scalar> { using Type = serval::Scalar; };
         template <> struct TypeOf<Type::Entity> { using Type = entt::entity; };
         template <> struct TypeOf<Type::Id> { using Type = serval::Id; };
         template <> struct TypeOf<Type::Vec2> { using Type = glm::vec2; };
@@ -65,7 +65,7 @@ namespace serval::variant {
             case Type::Boolean: return size<Type::Boolean>();
             case Type::Integer: return size<Type::Integer>();
             case Type::Integer64: return size<Type::Integer64>();
-            case Type::serval::Scalar: return size<Type::serval::Scalar>();
+            case Type::Scalar: return size<Type::Scalar>();
             case Type::Entity: return size<Type::Entity>();
             case Type::Id: return size<Type::Id>();
             case Type::Vec2: return size<Type::Vec2>();
@@ -94,7 +94,7 @@ namespace serval::variant {
         } else if constexpr (std::is_same_v<T, std::uint64_t> || std::is_same_v<T, std::int64_t>) {
             return Type::Integer64;
         } else if constexpr (std::is_same_v<T, float> || std::is_same_v<T, double>) {
-            return Type::serval::Scalar;
+            return Type::Scalar;
         } else if constexpr (std::is_same_v<T, entt::entity>) {
             return Type::Entity;
         } else if constexpr (std::is_same_v<T, serval::Id>) {
@@ -197,7 +197,7 @@ namespace serval::variant {
             case Type::Boolean: return {cast<TypeOf<Type::Boolean>>(ptr)};
             case Type::Integer: return {cast<TypeOf<Type::Integer>>(ptr)};
             case Type::Integer64: return {cast<TypeOf<Type::Integer64>>(ptr)};
-            case Type::serval::Scalar: return {cast<TypeOf<Type::serval::Scalar>>(ptr)};
+            case Type::Scalar: return {cast<TypeOf<Type::Scalar>>(ptr)};
             case Type::Entity: return {cast<TypeOf<Type::Entity>>(ptr)};
             case Type::Id: return {cast<TypeOf<Type::Id>>(ptr)};
             case Type::Vec2: return {cast<TypeOf<Type::Vec2>>(ptr)};
