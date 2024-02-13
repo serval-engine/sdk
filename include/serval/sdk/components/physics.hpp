@@ -13,13 +13,13 @@ namespace components::physics {
     // A physics object whose motion is dictated by the physics engine
     struct DynamicBody {
         serval::Handle shape;
-        Scalar mass;
+        serval::Scalar mass;
     };
 
     // A physics object whose motion is externally controlled
     struct Character {
         serval::Handle shape;
-        Scalar mass;
+        serval::Scalar mass;
     };
 
     // A static body that only characters collide with

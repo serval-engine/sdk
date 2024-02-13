@@ -21,9 +21,9 @@ using namespace entt::literals;
 #include <glm/vec4.hpp>
 #include <glm/gtc/quaternion.hpp>
 
-using Scalar = float;
-
 namespace serval {
+
+    using Scalar = float;
 
     class Id {
     public:
@@ -129,7 +129,8 @@ namespace serval {
     private:
         std::uint32_t m_packed_data;
     };
-    
+    static_assert(std::is_trivial_v<Id>, "serval::ContainerHandle must be trivial");
+    static_assert(std::is_standard_layout_v<Id>, "serval::ContainerHandle must be standard layout");
 
     struct ParametersBuffer {
         std::byte* buffer;

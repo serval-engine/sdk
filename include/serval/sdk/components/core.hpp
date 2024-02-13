@@ -7,25 +7,25 @@ namespace components::core {
 
 	// Provides a name by which to look this component up by in the scene
 	struct Named {
-		entt::hashed_string name;
+		serval::Id name;
 	};
 
 	struct Position {
-		Scalar x;
-		Scalar y;
-		Scalar z;
+		serval::Scalar x;
+		serval::Scalar y;
+		serval::Scalar z;
 	};
 
 	struct Orientation {
-		Scalar x;
-		Scalar y;
-		Scalar z;
+		serval::Scalar x;
+		serval::Scalar y;
+		serval::Scalar z;
 	};
 
 	struct Scaled {
-		Scalar x;
-		Scalar y;
-		Scalar z;
+		serval::Scalar x;
+		serval::Scalar y;
+		serval::Scalar z;
 	};
 
 }

@@ -41,17 +41,17 @@ namespace components::graphics {
 
     // An emitter of light, in all directions
     struct PointLight {
-        Scalar radius;
+        serval::Scalar radius;
         glm::vec3 color;
-        Scalar intensity;
+        serval::Scalar intensity;
     };
 
     // An emitter of light, in one direction
     struct SpotLight {
-        Scalar range;
+        serval::Scalar range;
         glm::vec3 color;
         glm::vec3 direction;
-        Scalar intensity;
+        serval::Scalar intensity;
     };
 
 }
